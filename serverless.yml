@@ -1,0 +1,17 @@
+service: SeleniumExample 
+
+provider:
+  name: aws
+  stage: 'dev'
+  region: us-east-1
+  ecr:
+    images:
+      seleniumLambda:
+        path: ./
+        platform: linux/amd64
+
+functions:
+  demo:
+    timeout: 60
+    image:
+      name: seleniumLambda 
